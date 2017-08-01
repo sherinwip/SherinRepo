@@ -7,6 +7,7 @@ import org.codehaus.jackson.map.ObjectMapper;
 public class JacksonMain {
 
 	public static void main(String[] args) {
+		System.out.println("Inside main");
 		ObjectMapper objectMapper = new ObjectMapper();
 		String jsonString = "{\"name\":\"Mahesh\",\"age\":21}";
 		Student student;
