@@ -1,10 +1,10 @@
-package hello;
+package com.rest.service;
 
-public class Greeting {
+public class Greet {
 	private final long id;
     private final String content;
 
-    public Greeting(long id, String content) {
+    public Greet(long id, String content) {
         this.id = id;
         this.content = content;
     }
