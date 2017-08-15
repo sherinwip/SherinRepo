@@ -19,7 +19,7 @@ public class GreetController {
 	    
 	    
 	    @RequestMapping(path="/html")
-	    public String html(@RequestParam(value="name", defaultValue="World") String name) {
+	    public String html() {
 	        return "Sherin in String";
 	    }
 }
