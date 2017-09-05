@@ -23,6 +23,14 @@
             <artifactId>json-path</artifactId>
             <scope>test</scope>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.derby/derby -->
+	<dependency>
+	    <groupId>org.apache.derby</groupId>
+	    <artifactId>derby</artifactId>
+	    <scope>test</scope>
+	</dependency>
+
+        
     </dependencies>
 
     <properties>
