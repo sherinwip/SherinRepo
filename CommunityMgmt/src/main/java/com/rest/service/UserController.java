@@ -1,5 +1,6 @@
 package com.rest.service;
 
+import java.net.URI;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -9,13 +10,15 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicLong;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class GreetController {
+public class UserController {
 	private static final String template = "Hello, %s!";
 	private final AtomicLong counter = new AtomicLong();
 
@@ -28,7 +31,7 @@ public class GreetController {
 
 	public static void main(String[] args) {
 
-		GreetController controller = new GreetController();
+		UserController controller = new UserController();
 		controller.addUser(2,"Bincy");
 
 	}
@@ -37,8 +40,8 @@ public class GreetController {
 		createTable();
 	}
 
-	@RequestMapping(path="/users",method=RequestMethod.POST)
-	public User addUser(@RequestParam int id,@RequestParam String username) {
+	@RequestMapping(path="/users",method=RequestMethod.GET)
+	public ResponseEntity<User> addUser(@RequestParam int id,@RequestParam String username) {
 		System.out.println("value are "+id+"and"+username);
 		Connection conn =null;
 		ArrayList<Statement> statements = new ArrayList<Statement>();
@@ -72,7 +75,7 @@ public class GreetController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return user;
+		return ResponseEntity.status(HttpStatus.CREATED).body(user);
 	}
 
 
