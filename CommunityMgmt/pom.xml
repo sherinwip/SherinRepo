@@ -32,14 +32,9 @@
 		</dependency>
 
 		<dependency>
-			<groupId>io.rest-assured</groupId>
-			<artifactId>rest-assured</artifactId>
-			<version>3.0.3</version>
-		</dependency>
-		<dependency>
-			<groupId>org.testng</groupId>
-			<artifactId>testng</artifactId>
-			<version>6.11</version>
+			<groupId>org.test-automation.qa</groupId>
+			<artifactId>complete-test-automation</artifactId>
+			<version>0.0.1</version>
 		</dependency>
 	</dependencies>
 
