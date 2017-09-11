@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicLong;
 
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -36,7 +37,7 @@ public class GreetController {
 		createTable();
 	}
 
-	@RequestMapping(path="/users")
+	@RequestMapping(path="/users",method=RequestMethod.POST)
 	public User addUser(@RequestParam int id,@RequestParam String username) {
 		System.out.println("value are "+id+"and"+username);
 		Connection conn =null;
