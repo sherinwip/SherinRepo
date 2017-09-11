@@ -7,7 +7,7 @@ public class AddUserTest extends AbstractRestTest{
 
 	@Test
 	public void verifyAddUserSuccessful() {
-		System.out.println(this.given().get("/greeting").asString());
+		System.out.println(this.given().get("/users?id=10&username=vaibhav").asString());
 	}
 	
 	
